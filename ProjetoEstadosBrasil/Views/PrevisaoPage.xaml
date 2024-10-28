@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoEstadosBrasil.Views.PrevisaoPage"
+             Title="Previsao">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <HorizontalStackLayout
+           HorizontalOptions="Center"
+           Margin="0,70,0,15">
+                <Label
+               Text="{Binding Previsao.Cidade}"
+               FontSize="45"
+               FontFamily="Arial"/>
+                <Label
+               Text="-"
+               FontSize="45"
+               FontFamily="Arial"
+               Margin="15,0,15,0"/>
+                <Label
+               Text="{Binding Previsao.Estado}"
+               FontSize="45"
+               FontFamily="Arial"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <VerticalStackLayout
+               HorizontalOptions="Center"
+               BackgroundColor="black"
+               WidthRequest="265"
+               Padding="0,30,0,30"
+               Margin="10,0">
+                    <Label
+                   Text="{Binding Previsao.Clima[0].Data}"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,30"
+                   FontSize="20"/>
+                    <Label
+                   Text="1"
+                   HorizontalOptions="Center"
+                   FontSize="65"
+                   FontFamily="TimesNewRoman"/>
+                    <Label
+                   Text="dia"
+                   HorizontalOptions="Center"
+                   FontSize="25"/>
+
+                    <Label
+                   HorizontalOptions="Center"
+                   Text="{Binding Previsao.Clima[0].Condicao_desc}"
+                   FontSize="20"
+                   Margin="0,30,0,0"/>
+
+                    <HorizontalStackLayout
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0">
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Max."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="sol.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[0].Max}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Min."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="frio.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[0].Min}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Índice UV"
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image 
+                               Source="uv.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[0].Indice_uv}"
+                                   FontSize="20"/>
+                                </Grid>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+               HorizontalOptions="Center"
+               BackgroundColor="black"
+               WidthRequest="265"
+               Padding="0,30,0,30"
+               Margin="10,0">
+                    <Label
+                   Text="{Binding Previsao.Clima[1].Data}"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,30"
+                   FontSize="20"/>
+                    <Label
+                   Text="2"
+                   HorizontalOptions="Center"
+                   FontSize="65"
+                   FontFamily="TimesNewRoman"/>
+                    <Label
+                   Text="dias"
+                   HorizontalOptions="Center"
+                   FontSize="25"/>
+
+                    <Label
+                   HorizontalOptions="Center"
+                   Text="{Binding Previsao.Clima[1].Condicao_desc}"
+                   FontSize="20"
+                   Margin="0,30,0,0"/>
+
+                    <HorizontalStackLayout
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0">
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Max."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="sol.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[1].Max}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Min."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="frio.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[1].Min}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Índice UV"
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image 
+                               Source="uv.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[1].Indice_uv}"
+                                   FontSize="20"/>
+                                </Grid>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+               HorizontalOptions="Center"
+               BackgroundColor="black"
+               WidthRequest="265"
+               Padding="0,30,0,30"
+               Margin="10,0">
+                    <Label
+                   Text="{Binding Previsao.Clima[2].Data}"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,30"
+                   FontSize="20"/>
+                    <Label
+                   Text="3"
+                   HorizontalOptions="Center"
+                   FontSize="65"
+                   FontFamily="TimesNewRoman"/>
+                    <Label
+                   Text="dias"
+                   HorizontalOptions="Center"
+                   FontSize="25"/>
+
+                    <Label
+                   HorizontalOptions="Center"
+                   Text="{Binding Previsao.Clima[2].Condicao_desc}"
+                   FontSize="20"
+                   Margin="0,30,0,0"/>
+
+                    <HorizontalStackLayout
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0">
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Max."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="sol.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[2].Max}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Min."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="frio.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[2].Min}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Índice UV"
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image 
+                               Source="uv.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[2].Indice_uv}"
+                                   FontSize="20"/>
+                                </Grid>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+               HorizontalOptions="Center"
+               BackgroundColor="black"
+               WidthRequest="265"
+               Padding="0,30,0,30"
+               Margin="10,0">
+                    <Label
+                   Text="{Binding Previsao.Clima[3].Data}"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,30"
+                   FontSize="20"/>
+                    <Label
+                   Text="4"
+                   HorizontalOptions="Center"
+                   FontSize="65"
+                   FontFamily="TimesNewRoman"/>
+                    <Label
+                   Text="dias"
+                   HorizontalOptions="Center"
+                   FontSize="25"/>
+
+                    <Label
+                   HorizontalOptions="Center"
+                   Text="{Binding Previsao.Clima[3].Condicao_desc}"
+                   FontSize="20"
+                   Margin="0,30,0,0"/>
+
+                    <HorizontalStackLayout
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0">
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Max."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="sol.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[3].Max}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Min."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="frio.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[3].Min}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Índice UV"
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image 
+                               Source="uv.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[3].Indice_uv}"
+                                   FontSize="20"/>
+                                </Grid>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+               HorizontalOptions="Center"
+               BackgroundColor="black"
+               WidthRequest="265"
+               Padding="0,30,0,30"
+               Margin="10,0">
+                    <Label
+                   Text="{Binding Previsao.Clima[4].Data}"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,30"
+                   FontSize="20"/>
+                    <Label
+                   Text="5"
+                   HorizontalOptions="Center"
+                   FontSize="65"
+                   FontFamily="TimesNewRoman"/>
+                    <Label
+                   Text="dias"
+                   HorizontalOptions="Center"
+                   FontSize="25"/>
+
+                    <Label
+                   HorizontalOptions="Center"
+                   Text="{Binding Previsao.Clima[4].Condicao_desc}"
+                   FontSize="20"
+                   Margin="0,30,0,0"/>
+
+                    <HorizontalStackLayout
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0">
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Max."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="sol.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[4].Max}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Temp. Min."
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image Source="frio.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[4].Min}"
+                                   FontSize="20"/>
+                                </Grid>
+                                <Grid>
+                                    <Label
+                                   Text="ºC"
+                                   FontSize="20"/>
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                       Margin="5,0">
+                            <Grid>
+                                <Label
+                               Text="Índice UV"
+                               FontSize="15"/>
+                            </Grid>
+                            <Grid>
+                                <Image 
+                               Source="uv.png"
+                               HeightRequest="40"
+                               Aspect="AspectFit"/>
+                            </Grid>
+                            <HorizontalStackLayout
+                           HorizontalOptions="Center">
+                                <Grid>
+                                    <Label
+                                   Text="{Binding Previsao.Clima[4].Indice_uv}"
+                                   FontSize="20"/>
+                                </Grid>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+           HorizontalOptions="Center"
+           Margin="0,50,0,0">
+                <Grid
+               Margin="0,0,10,0">
+                    <Label
+                   Text="Atualizado em: "
+                   FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Label
+                   Text="{Binding Previsao.Atualizado_em}"
+                   FontSize="20"/>
+                </Grid>
+            </HorizontalStackLayout>
+            <Button Text="Voltar" Clicked="VoltarButton_Clicked" 
+                    WidthRequest="150"
+                    HeightRequest="50"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

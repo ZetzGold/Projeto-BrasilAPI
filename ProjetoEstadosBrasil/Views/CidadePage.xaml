@@ -1,0 +1,68 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoEstadosBrasil.Views.CidadePage"
+             Title="CidadePage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label HorizontalOptions="Center" VerticalOptions="Center"
+                Text="Digite o nome da cidade de sua escolha:"
+                   FontSize="35"/>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry Placeholder="Ex. São Paulo" HeightRequest="50" WidthRequest="338" x:Name="EntryNomeCidade"/>
+                <Button Text="Buscar" Command="{Binding BuscarCidadeCommand}" CommandParameter="{Binding Text, Source={x:Reference EntryNomeCidade}}"/>
+            </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Cidades}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" Margin="5">
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                BackgroundColor="Black">
+                                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="800"
+                                    Padding="10" Margin="5"
+                                    BackgroundColor="Black">
+                                    <HorizontalStackLayout>
+                                        <Label 
+                                        Text="{Binding Nome}" 
+                                        FontSize="35"/>
+                                        <Label
+                                        Text="-"
+                                        FontSize="35"
+                                        Margin="10,0,10,0"
+                                        HorizontalTextAlignment="End"/>
+                                        <Label 
+                                        Text="{Binding Estado}" 
+                                        FontSize="35"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout
+                                        Margin="0,15,0,30">
+                                        <Label
+                                            Text="Id: "
+                                            FontSize="20"
+                                            FontFamily="TimesNewRoman"/>
+                                        <Label 
+                                            Text="{Binding Id}" 
+                                            FontSize="20"
+                                            FontFamily="TimesNewRoman"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <Button
+                                    Text="➥"
+                                    WidthRequest="200"
+                                    HeightRequest="150"
+                                    FontSize="50"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type CollectionView}}, Path=BindingContext.NavigateToPrevisaoCommand}"
+                                    CommandParameter="{Binding}"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
